@@ -25,6 +25,11 @@ public class PruebaPersonaje {
         Personaje per09 = per02;
         Personaje per10 = per01;
 
+        per06.setNombre("Jorge Eduardo");
+        per08.setNombre("Yosselin");
+        per06.setNombre("Ana");
+
+
 
 
     }
