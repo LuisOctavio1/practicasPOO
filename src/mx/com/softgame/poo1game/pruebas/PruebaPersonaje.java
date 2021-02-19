@@ -29,6 +29,9 @@ public class PruebaPersonaje {
         per08.setNombre("Yosselin");
         per06.setNombre("Ana");
 
+        per07.setEdad((int)Math.random()*1001);
+        per09.setEdad((int)Math.random()*1001);
+
 
 
 
