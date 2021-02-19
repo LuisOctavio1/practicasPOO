@@ -32,6 +32,12 @@ public class PruebaPersonaje {
         per07.setEdad((int)Math.random()*1001);
         per09.setEdad((int)Math.random()*1001);
 
+        System.out.println(per01.getDetalle());
+        System.out.println(per02.getDetalle());
+        System.out.println(per03.getDetalle());
+        System.out.println(per04.getDetalle());
+        System.out.println(per05.getDetalle());
+
 
 
 
