@@ -6,13 +6,14 @@ public class Personaje{
     private int edad;
     public Personaje(String nombre){
         this.nombre = nombre;
-        int edad = 0;
+        this.edad = 0;
     }
 
     public int getEdad(){
         return edad;
     }
     public boolean setEdad(int edad){
+       
         if (edad > 0 && edad <120){
             this.edad = edad;
             return true;
@@ -26,8 +27,6 @@ public class Personaje{
         if (caracteres > 3 && caracteres < 10){
             this.nombre = nombre;
 
-        }else{
-
         }
         
     }
@@ -39,7 +38,7 @@ public class Personaje{
 
     }
     public String getDetalle(){
-        String detalle = (nombre + "\t" + edad);
+        String detalle = nombre + "\t" + edad;
         return detalle;
 
     } 

@@ -5,19 +5,20 @@ public class PruebaPersonaje {
         Personaje per01 = new Personaje("Aline");
         per01.setEdad(200);
         Personaje per02 = new Personaje("Erick");
-        per01.setEdad(10);
+        per02.setEdad(10);
         Personaje per03 = new Personaje("Alan");
-        per01.setEdad(1);
+        per03.setEdad(1);
         Personaje per04 = new Personaje("Lesly");
-        per01.setEdad(-10);
+        per04.setEdad(-10);
         Personaje per05 = new Personaje("Brian");
-        per01.setEdad(500);
+        per05.setEdad(500);
 
         System.out.println(per01.getDetalle());
         System.out.println(per02.getDetalle());
         System.out.println(per03.getDetalle());
         System.out.println(per04.getDetalle());
         System.out.println(per05.getDetalle());
+        
 
         Personaje per06 = per05;
         Personaje per07 = per04;
@@ -27,11 +28,12 @@ public class PruebaPersonaje {
 
         per06.setNombre("Jorge Eduardo");
         per08.setNombre("Yosselin");
-        per06.setNombre("Ana");
+        per10.setNombre("Ana");
 
-        per07.setEdad((int)Math.random()*1001);
+        per07.setEdad((int)(Math.random()*1001));
         per09.setEdad((int)Math.random()*1001);
 
+        System.out.println("------------------");
         System.out.println(per01.getDetalle());
         System.out.println(per02.getDetalle());
         System.out.println(per03.getDetalle());
