@@ -8,6 +8,10 @@ public class PruebaPersonaje {
         Personaje per04 = new Personaje("Lesly");
         Personaje per05 = new Personaje("Brian");
 
+        for(int i=0;i<3;i++){
+            
+        }
+
 
 
 
