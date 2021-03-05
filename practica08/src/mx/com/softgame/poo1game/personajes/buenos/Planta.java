@@ -10,7 +10,6 @@ public class Planta extends Personaje{
     }
     public Planta(String nombre,char escudo){
         super(nombre);
-        this.vida = 3;
         this.escudo = escudo;
 
     }
@@ -21,7 +20,6 @@ public class Planta extends Personaje{
     }
     public Planta(String nombre){
         super(nombre);
-        this.vida = 3;
         this.escudo = 'A';
 
     }
@@ -39,7 +37,7 @@ public class Planta extends Personaje{
         if(escudo == 'A'){
             multiplo = 2;
         }
-        if(this.vida > 0){
+        if(this.vida > multiplo){
             this.vida = this.vida - (1 * multiplo);
         }
 
@@ -50,7 +48,7 @@ public class Planta extends Personaje{
             multiplo = 2;
         }
         if(decremento * multiplo <= this.vida){
-            this.vida -= decremento;
+            this.vida -= (decremento * multiplo);
         }
     }
     

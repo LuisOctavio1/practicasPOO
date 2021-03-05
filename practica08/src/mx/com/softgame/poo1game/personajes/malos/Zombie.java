@@ -8,12 +8,12 @@ public class Zombie extends Personaje {
         this.ataque = ataque;
     }
     public Zombie(String nombre,boolean ataque){
-        this.nombre = nombre;
+        super(nombre);
         this.vida = 3;
         this.ataque = ataque;
     }
     public Zombie(String nombre){
-        this.nombre = nombre;
+        super(nombre);
         this.vida = 3;
         this.ataque = false;
     }
@@ -23,21 +23,25 @@ public class Zombie extends Personaje {
     }
     public void  decVida(){
         int multiplo = 1;
-        if(escudo == 'A'){
+        if(!ataque){
+            multiplo = 3;
+        }else{
             multiplo = 2;
         }
-        if(this.vida > 0){
-            this.vida = this.vida - (1 * multiplo);
+        if(this.vida > multiplo){
+            this.vida = this.vida - (multiplo);
         }
 
     }
     public void  decVida(int decremento){
         int multiplo = 1;
-        if(escudo == 'A'){
+        if(!ataque){
+            multiplo = 3;
+        }else{
             multiplo = 2;
         }
         if(decremento * multiplo <= this.vida){
-            this.vida -= decremento;
+            this.vida -= (decremento * multiplo);
         }
     }
     

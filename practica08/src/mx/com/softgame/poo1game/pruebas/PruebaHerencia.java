@@ -28,19 +28,15 @@ public class PruebaHerencia {
         for (Personaje t: arreglo){
             System.out.println(t.getDetalle());
             if(t instanceof Planta){
-                System.out.println("Soy una planta" + t.getEscudo);
+                System.out.println("Soy una planta");
             }
             if(t instanceof Zombie){
-                System.out.println("Soy un zombie" + t.getAtaque);
+                System.out.println("Soy un zombie");
             }
             t.decVida((int)((Math.random()*10)));
             System.out.println(t.getDetalle());
         }
 
     
-
-
-
-        
     }
 }
