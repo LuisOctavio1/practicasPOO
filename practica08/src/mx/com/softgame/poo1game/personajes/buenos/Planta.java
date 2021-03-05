@@ -1,4 +1,5 @@
 package mx.com.softgame.poo1game.personajes.buenos;
+import mx.com.softgame.poo1game.personajes.Personaje;
 public class Planta {
      private char escudo;
 
