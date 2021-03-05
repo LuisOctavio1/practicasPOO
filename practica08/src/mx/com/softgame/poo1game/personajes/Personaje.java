@@ -3,19 +3,23 @@ package mx.com.softgame.poo1game.personajes;
 
 public class Personaje{
     private String nombre;
-    private int edad;
+    private int vida;
     public Personaje(String nombre){
         this.nombre = nombre;
-        this.edad = 0;
+        this.vida = 0;
+    }
+    public Personaje(String nombre){
+        this.nombre = nombre;
+        this.vida = 3;
     }
 
-    public int getEdad(){
-        return edad;
+    public int getVida(){
+        return vida;
     }
-    public boolean setEdad(int edad){
+    public boolean setVida(int vida){
        
-        if (edad > 0 && edad <120){
-            this.edad = edad;
+        if (edad > 0 && edad <100){
+            this.vida = vida;
             return true;
 
         }else{
@@ -38,10 +42,22 @@ public class Personaje{
 
     }
     public String getDetalle(){
-        String detalle = nombre + "\t" + edad;
+        String detalle = nombre + "\t" + vida;
         return detalle;
 
-    } 
+    }
+    public void  decVida(){
+        if(this.vida > 0){
+            this.vida --;
+        }
+
+    }
+    public void  decVida(int decremento){
+        if(decremento <= this.vida){
+            this.vida -= decremento;
+        }
+    }
+    
 
 
 }
