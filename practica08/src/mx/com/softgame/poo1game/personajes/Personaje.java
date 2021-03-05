@@ -18,7 +18,7 @@ public class Personaje{
     }
     public boolean setVida(int vida){
        
-        if (edad > 0 && edad <100){
+        if (vida > 0 && vida <100){
             this.vida = vida;
             return true;
 

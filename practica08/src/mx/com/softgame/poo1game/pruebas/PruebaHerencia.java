@@ -12,7 +12,34 @@ public class PruebaHerencia {
         Planta plan04 = new Planta("Alan");
         Zombie zomb01 = new Zombie("Karen",80,true);
         Zombie zomb02 = new Zombie("Eduardo",true);
-        Zombie zomb01 = new Zombie("Esmeralda");
+        Zombie zomb03 = new Zombie("Esmeralda");
+
+        Personaje arreglo[] = new Personaje[8];
+        arreglo[0] = per01;
+        arreglo[1] = per02;
+        arreglo[2] = plan01;
+        arreglo[3] = plan02;
+        arreglo[4] = plan03;
+        arreglo[5] = plan04;
+        arreglo[6] = zomb01;
+        arreglo[7] = zomb02;
+        arreglo[8] = zomb03;
+
+        for (Personaje t: arreglo){
+            System.out.println(t.getDetalle());
+            if(t instanceof Planta){
+                System.out.println("Soy una planta" + t.getEscudo);
+            }
+            if(t instanceof Zombie){
+                System.out.println("Soy un zombie" + t.getAtaque);
+            }
+            t.decVida((int)((Math.random()*10)));
+            System.out.println(t.getDetalle());
+        }
+
+    
+
+
 
         
     }
