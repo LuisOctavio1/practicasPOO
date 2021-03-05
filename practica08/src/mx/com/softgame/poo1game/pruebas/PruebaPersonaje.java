@@ -1,5 +1,5 @@
-//inicio 7:50
-//fin 9:25
+//inicio 7:42
+//fin 
 
 package mx.com.softgame.poo1game.pruebas;
 import mx.com.softgame.poo1game.personajes.Personaje;
