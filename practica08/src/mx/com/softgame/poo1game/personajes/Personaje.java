@@ -4,9 +4,9 @@ package mx.com.softgame.poo1game.personajes;
 public class Personaje{
     private String nombre;
     private int vida;
-    public Personaje(String nombre){
+    public Personaje(String nombre, int vida){
         this.nombre = nombre;
-        this.vida = 0;
+        this.vida = vida;
     }
     public Personaje(String nombre){
         this.nombre = nombre;

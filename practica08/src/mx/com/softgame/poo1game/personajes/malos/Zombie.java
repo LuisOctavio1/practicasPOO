@@ -1,39 +1,25 @@
-package mx.com.softgame.poo1game.personajes.buenos;
-public class Planta {
-     private char escudo;
+package mx.com.softgame.poo1game.personajes.malos;
+public class Zombie extends Personaje {
+    private boolean ataque;
 
-    public Planta(String nombre,int vida,char escudo){
+    public Zombie(String nombre,int vida,boolean ataque){
         this.nombre = nombre;
         this.vida = vida;
-        this.escudo = escudo;
-
+        this.ataque = ataque;
     }
-    public Planta(String nombre,char escudo){
+    public Zombie(String nombre,boolean ataque){
         this.nombre = nombre;
         this.vida = 3;
-        this.escudo = escudo;
-
+        this.ataque = ataque;
     }
-    public Planta(String nombre,int vida){
-        this.nombre = nombre;
-        this.vida = vida;
-        this.escudo = 'A';
-
-    }
-    public Planta(String nombre){
+    public Zombie(String nombre){
         this.nombre = nombre;
         this.vida = 3;
-        this.escudo = 'A';
-
+        this.ataque = false;
     }
 
-    public char getEscudo(){
-        return escudo;
-    }
-    public String getDetalle(){
-        String detalle = nombre + "\t" + vida + escudo;
-        return detalle;
-
+    public boolean getAtaque(){
+        return ataque;
     }
     public void  decVida(){
         int multiplo = 1;
@@ -55,6 +41,4 @@ public class Planta {
         }
     }
     
-    
 }
-
