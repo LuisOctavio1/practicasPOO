@@ -27,9 +27,8 @@ public class Planta extends Personaje{
    public char getEscudo(){
        return escudo;
    }
-   public String getDetalle(){
-       String detalle = nombre + "\t" + vida + escudo;
-       return detalle;
+   public String toString(){
+       return nombre + "\t" + vida + "\t" + escudo;
 
    }
    public void  decVida(){
@@ -44,6 +43,11 @@ public class Planta extends Personaje{
        }
       
    }
+
+   public void equals(Object a, object b){
+        super.equals(a, b);
+
+    }   
    
    
 }

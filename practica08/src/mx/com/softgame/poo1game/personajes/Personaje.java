@@ -39,9 +39,8 @@ public class Personaje{
         System.out.println("Hola alumno de POO " + nombre);
 
     }
-    public String getDetalle(){
-        String detalle = nombre + "\t" + vida;
-        return detalle;
+    public String toString(){
+        return nombre + "\t" + vida;
 
     }
     public void  decVida(){
@@ -52,6 +51,14 @@ public class Personaje{
         if(decremento <= this.vida){
             this.vida -= decremento;
         }
+    }
+    public void equals(Object a, object b){
+        if(a.equals(b)){
+            System.out.println("Son iguales");
+        }else{
+            System.out.println("No son iguales");
+        }
+
     }
     
 
