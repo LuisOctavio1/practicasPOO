@@ -52,12 +52,11 @@ public class Personaje{
             this.vida -= decremento;
         }
     }
-    public void equals(Object a, object b){
+    public booleand iguales(object b){
         if(a.equals(b)){
-            System.out.println("Son iguales");
-        }else{
-            System.out.println("No son iguales");
+            return true;
         }
+        return false;
 
     }
     

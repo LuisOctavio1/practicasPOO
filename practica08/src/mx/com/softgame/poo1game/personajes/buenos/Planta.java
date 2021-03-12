@@ -44,8 +44,8 @@ public class Planta extends Personaje{
       
    }
 
-   public void equals(Object a, object b){
-        super.equals(a, b);
+   public void iguales(Object a, object b){
+        super.iguales(a, b);
 
     }   
    
