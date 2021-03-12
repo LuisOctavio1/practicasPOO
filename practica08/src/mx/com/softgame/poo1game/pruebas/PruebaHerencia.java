@@ -16,16 +16,14 @@ public class PruebaHerencia {
         System.out.println(plan01.getEscudo());
 
 
-        Personaje personajes[] = new Personaje [9];
-        personajes[0] = per01;
-        personajes[1] = per02;
-        personajes[2] = plan01;
-        personajes[3] = plan02;
-        personajes[4] = plan03;
-        personajes[5] = plan04;
-        personajes[6] = zomb01;
-        personajes[7] = zomb02;
-        personajes[8] = zomb03;
+        Personaje personajes[] = {new Personaje("omar", 99),
+        new Planta("Karen", 50),
+        new Zombie("Hanna", 80,false),
+
+        new Personaje("omar", 99),
+        new Planta("Karen", 50),
+        new Zombie("Hanna", 80,false),
+        }; 
 
 
         for (Personaje t: personajes){
