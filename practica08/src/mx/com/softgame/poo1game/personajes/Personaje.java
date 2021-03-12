@@ -40,7 +40,7 @@ public class Personaje{
 
     }
     public String toString(){
-        return nombre + "\t" + vida;
+        return nombre + " " + vida;
 
     }
     public void  decVida(){
@@ -52,14 +52,15 @@ public class Personaje{
             this.vida -= decremento;
         }
     }
-    public booleand iguales(object b){
-        if(a.equals(b)){
-            return true;
+    public boolean iguales(Object b){
+        if ((b != null) && (b instanceof Personaje)){
+            Personaje d = (Personaje) b;
+            if ((nombre == d.nombre) && (vida == d.vida)){
+                return true;
+            }
         }
         return false;
-
     }
     
-
-
 }
+

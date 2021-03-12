@@ -28,7 +28,7 @@ public class Planta extends Personaje{
        return escudo;
    }
    public String toString(){
-       return nombre + "\t" + vida + "\t" + escudo;
+       return nombre + " " + vida + " " + escudo;
 
    }
    public void  decVida(){
@@ -44,10 +44,15 @@ public class Planta extends Personaje{
       
    }
 
-   public void iguales(Object a, object b){
-        super.iguales(a, b);
-
-    }   
+   public boolean  iguales(Object b){
+        if ((b != null) && (b instanceof Planta)){
+            Planta d = (Planta) b;
+            if ((nombre == d.nombre) && (vida == d.vida) && (escudo == d.escudo)){
+                return true;
+            }
+        }
+        return false;
+    } 
    
    
 }

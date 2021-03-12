@@ -23,14 +23,14 @@ public class PruebaHerencia {
         new Planta("Karen", 50),
         new Zombie("Hanna", 80,false),
         };
-        
+        int i = 0;
         while(i < personajes.length){
             for(Personaje p : personajes){
                 if (p == personajes[i]){
-                    System.out.println("*** " + p + "es identico a " + personajes[i] + " son el mismo objeto***");
+                    System.out.println("*** " + p + " es identico a " + personajes[i] + " son el mismo objeto***");
                 }else{
                     if (p.iguales(personajes[i])){
-                        System.out.println("** " + p + "es igual a " + personajes[i] + " son diferentes objetos**");
+                        System.out.println("** " + p + " es igual a " + personajes[i] + " son diferentes objetos**");
 
                     }else{
                         System.out.println( p + " != " + personajes[i]);
@@ -39,9 +39,11 @@ public class PruebaHerencia {
                 }    
                 
             }
+            System.out.println();
+            i ++;
         }
 
-
+        /*
         for (Personaje t: personajes){
             System.out.println(t.getDetalle());
             if(t instanceof Planta){
@@ -55,7 +57,7 @@ public class PruebaHerencia {
             t.decVida((int)((Math.random()*10)));
             System.out.println(t.getDetalle());
         }
-
+        */
     
     }
 }
