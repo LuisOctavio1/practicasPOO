@@ -1,10 +1,12 @@
 package mx.com.softgame.poo1game.personajes;
 public class Personaje{
+    private final int id;
     private String nombre;
     private int vida;
     public Personaje(String nombre, int vida){
         this.nombre = nombre;
         this.vida = vida;
+        id = Utileria.getID();
     }
     public Personaje(String nombre){
         this.nombre = nombre;
