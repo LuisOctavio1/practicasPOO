@@ -25,14 +25,14 @@ public class Planta extends Personaje{
    }
    public final String getIdVidaEscudo(){
        //el error marca que la clase planta no puede sobreescribir el metodo ya que este es final
-        return  super.getIdVida() + " " + escudo;
+        return  super.getIdVida() + escudo;
     }
 
    public char getEscudo(){
        return escudo;
    }
    public String toString(){
-       return super.toString() + escudo;
+       return super.toString() + " {" + escudo + "}";
 
    }
    public void  decVida(){

@@ -21,10 +21,10 @@ public final class Zombie extends Personaje {
     }
     public final String getIdVidaAtaque(){
         //el error marca que la clase zombie no puede sobreescribir el metodo ya que este es final
-         return  super.getIdVida() + " " + ataque;
+         return  super.getIdVida() + ataque;
     }
     public String toString(){
-        return super.toString() + ataque;
+        return super.toString() + " {" + ataque + "}";
     }
     public void  decVida(){
         if(ataque){
