@@ -19,6 +19,10 @@ public class Zombie extends Personaje {
     public boolean getAtaque(){
         return ataque;
     }
+    public final int getIdVidaAtaque(){
+        //el error marca que la clase zombie no puede sobreescribir el metodo ya que este es final
+         return  super.getIdVida() + ataque;
+    }
     public String toString(){
         return super.toString() + ataque;
     }

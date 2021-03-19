@@ -1,20 +1,19 @@
 package mx.com.softgame.poo1game.personajes;
-import mx.com.softgame.poo1game.personajes.utils.Utileria;
+import mx.com.softgame.poo1game.utils.Utileria;
 public class Personaje{
-    private final int id;
+    private final int id = Utileria.getID();
     private String nombre;
     private int vida;
     public Personaje(String nombre, int vida){
         this.nombre = nombre;
         this.vida = vida;
-        id = Utileria.getID();
     }
     public Personaje(String nombre){
         this.nombre = nombre;
         this.vida = 3;
     }
 
-    public final int getVida(){
+    public final int getIdVida(){
         return vida + id;
     }
     public boolean setVida(int vida){
