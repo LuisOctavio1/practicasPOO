@@ -18,30 +18,26 @@ public class Zombie extends Personaje {
         this.ataque = false;
     }
 
+    public String getDetalle(){
+        return super.getDetalle() + ataque;
+     }
+
     public boolean getAtaque(){
         return ataque;
     }
     public void  decVida(){
-        int multiplo = 1;
-        if(!ataque){
-            multiplo = 3;
+        if(ataque){
+            super.decVida(2);
         }else{
-            multiplo = 2;
-        }
-        if(this.vida > multiplo){
-            this.vida = this.vida - (multiplo);
+            super.decVida(3);
         }
 
     }
     public void  decVida(int decremento){
-        int multiplo = 1;
-        if(!ataque){
-            multiplo = 3;
+        if(ataque){
+            super.decVida(decremento*2);
         }else{
-            multiplo = 2;
-        }
-        if(decremento * multiplo <= this.vida){
-            this.vida -= (decremento * multiplo);
+            super.decVida(decremento*3);
         }
     }
     
