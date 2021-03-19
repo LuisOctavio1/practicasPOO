@@ -1,4 +1,5 @@
 package mx.com.softgame.poo1game.personajes;
+import mx.com.softgame.poo1game.personajes.utils.Utileria;
 public class Personaje{
     private final int id;
     private String nombre;
@@ -13,8 +14,8 @@ public class Personaje{
         this.vida = 3;
     }
 
-    public int getVida(){
-        return vida;
+    public final int getVida(){
+        return vida + id;
     }
     public boolean setVida(int vida){
        
@@ -42,7 +43,7 @@ public class Personaje{
 
     }
     public String toString(){
-        return nombre + " " + vida;
+        return id + " " + nombre + " " + vida;
 
     }
     public void  decVida(){
