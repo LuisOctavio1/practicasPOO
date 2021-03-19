@@ -1,6 +1,6 @@
 package mx.com.softgame.poo1game.personajes.malos;
 import mx.com.softgame.poo1game.personajes.Personaje;
-public class Zombie extends Personaje {
+public final class Zombie extends Personaje {
     private boolean ataque;
 
     public Zombie(String nombre,int vida,boolean ataque){
@@ -19,9 +19,9 @@ public class Zombie extends Personaje {
     public boolean getAtaque(){
         return ataque;
     }
-    public final int getIdVidaAtaque(){
+    public final String getIdVidaAtaque(){
         //el error marca que la clase zombie no puede sobreescribir el metodo ya que este es final
-         return  super.getIdVida() + ataque;
+         return  super.getIdVida() + " " + ataque;
     }
     public String toString(){
         return super.toString() + ataque;

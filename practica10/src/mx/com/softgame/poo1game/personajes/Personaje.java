@@ -13,8 +13,8 @@ public class Personaje{
         this.vida = 3;
     }
 
-    public final int getIdVida(){
-        return vida + id;
+    public final String getIdVida(){
+        return vida + " " + id;
     }
     public boolean setVida(int vida){
        
