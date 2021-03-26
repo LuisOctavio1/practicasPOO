@@ -1,9 +1,9 @@
 package mx.com.softgame.poo1game.personajes;
 import mx.com.softgame.poo1game.utils.Utileria;
-public class Personaje{
-    private final int id = Utileria.getID();
-    private String nombre;
-    private int vida;
+public abstract class  Personaje{
+    protected final int id = Utileria.getID();
+    protected String nombre;
+    protected int vida;
     public Personaje(String nombre, int vida){
         this.nombre = nombre;
         this.vida = vida;
@@ -34,9 +34,11 @@ public class Personaje{
         }
         
     }
-    public String getNombre(){
-        return nombre;
-    }
+    public abstract String getNombre();
+    /*
+    contenido del metodo
+    return nombre;
+    */
     public void saludar(){
         System.out.println("Hola alumno de POO " + nombre);
 
@@ -54,7 +56,11 @@ public class Personaje{
             this.vida -= decremento;
         }
     }
-    public boolean equals(Object b){
+    public abstract boolean equals(Object b);
+        
+    
+    /*
+    contenido del metodo
         if ((b != null) && (b instanceof Personaje)){
             Personaje d = (Personaje) b;
             if ((nombre == d.nombre) && (vida == d.vida)){
@@ -62,7 +68,7 @@ public class Personaje{
             }
         }
         return false;
-    }
+        */
     
 }
 
