@@ -23,6 +23,13 @@ public class Planta extends Personaje{
        this.escudo = 'A';
 
    }
+
+   public void setNombre(String nombre){
+       if (nombre.length() >= 5 && nombre.length()<=10){
+           this.nombre = nombre;
+       }
+
+   }
    public final String getIdVidaEscudo(){
        //el error marca que la clase planta no puede sobreescribir el metodo ya que este es final
         return  super.getIdVida() + escudo;
@@ -49,8 +56,14 @@ public class Planta extends Personaje{
    }
 
    public boolean  equals(Object b){
-        return (super.equals(b) && b instanceof Planta && escudo == ((Planta)b).escudo);
-   }
+        if ((b != null) && (b instanceof Personaje)){
+            Planta d = (Planta) b;
+            if ((nombre == d.nombre) && (vida == d.vida)){
+                return true;
+            }
+        }
+        return false;
+    }
    
    
 

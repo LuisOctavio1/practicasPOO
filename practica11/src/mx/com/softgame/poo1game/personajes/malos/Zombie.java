@@ -15,6 +15,11 @@ public final class Zombie extends Personaje {
         super(nombre,3);
         this.ataque = false;
     }
+    
+    public void setNombre(String nombre){
+        
+ 
+    }
 
     public boolean getAtaque(){
         return ataque;
@@ -43,7 +48,16 @@ public final class Zombie extends Personaje {
     }
     
     public boolean  equals(Object b){
+        if ((b != null) && (b instanceof Personaje)){
+            Zombie d = (Zombie) b;
+            if ((nombre == d.nombre) && (vida == d.vida)){
+                return true;
+            }
+        }
+        return false;
+        /*
         return (super.equals(b) && b instanceof Zombie && ataque == ((Zombie)b).ataque);
+        */
     }    
        
 }

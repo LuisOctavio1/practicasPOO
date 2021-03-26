@@ -26,15 +26,8 @@ public abstract class  Personaje{
             return false;
         }
     }
-    public void setNombre(String nombre){
-       int caracteres = this.nombre.length();
-        if (caracteres > 3 && caracteres < 10){
-            this.nombre = nombre;
-
-        }
-        
-    }
-    public abstract String getNombre();
+    
+    public abstract void setNombre(String nombre);
     /*
     contenido del metodo
     return nombre;
