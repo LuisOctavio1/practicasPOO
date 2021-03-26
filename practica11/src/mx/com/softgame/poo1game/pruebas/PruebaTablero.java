@@ -15,9 +15,10 @@ public class PruebaTablero {
             if(!Tablero.addPersonaje(t)){
                 System.out.println("No pudo ser insertado");
 
+
             }
-            System.out.println("xd");
         }
+        
         Tablero.delPersonaje();
         Tablero.showAll();
 
