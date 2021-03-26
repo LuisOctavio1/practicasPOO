@@ -36,6 +36,9 @@ public abstract class  Personaje{
         System.out.println("Hola alumno de POO " + nombre);
 
     }
+    public String getNombre(){
+        return nombre;
+    }
     public String toString(){
         return "[" + id + "] " + nombre + " (" + vida + ")";
 
