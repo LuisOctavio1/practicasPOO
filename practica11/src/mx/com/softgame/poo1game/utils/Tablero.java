@@ -1,5 +1,6 @@
 package mx.com.softgame.poo1game.utils;
-public class Tablero {
+import mx.com.softgame.poo1game.personajes.Personaje;
+public class Tablero{
     final static int MAX_LINE = 10;
     private static int idx = -1;
     private static Personaje [] personajes = new Personaje[MAX_LINE];
@@ -7,10 +8,12 @@ public class Tablero {
     private Tablero(){
     }
     public static boolean addPersonaje(Personaje p){
-        if(personajes = new Personaje[idx]){
+        if(p == (personajes[idx] = new Personaje())){
             return true;
         }
         return false;
     }
+
+
     
 }
