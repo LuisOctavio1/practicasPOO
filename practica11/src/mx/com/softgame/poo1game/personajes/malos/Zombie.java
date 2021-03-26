@@ -17,7 +17,9 @@ public final class Zombie extends Personaje {
     }
     
     public void setNombre(String nombre){
-        
+        if (nombre.length() >= 3 && nombre.length()<=8){
+            this.nombre = nombre;
+        }
  
     }
 
@@ -26,7 +28,7 @@ public final class Zombie extends Personaje {
     }
     public final String getIdVidaAtaque(){
         //el error marca que la clase zombie no puede sobreescribir el metodo ya que este es final
-         return  super.getIdVida() + ataque;
+         return  super.getIdVida() +" " + ataque;
     }
     public String toString(){
         return super.toString() + " {" + ataque + "}";
