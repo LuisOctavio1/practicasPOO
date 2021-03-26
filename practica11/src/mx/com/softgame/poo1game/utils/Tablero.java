@@ -8,19 +8,20 @@ public class Tablero{
     private Tablero(){
     }
     public static boolean addPersonaje(Personaje p){
-        personajes[idx] = p;
-        if(!(personajes[idx] == p)){
-            idx -= 1 ;
-            return true;
+        if(idx < 0){
+            idx += 1 ;
+            return false;
         }
-        return false;
+        personajes[idx] = p;
+        idx-=1;
+        return true;
     }
     public static boolean delPersonaje(){
         if(!(personajes[idx] == null)){
             personajes[idx] = null;
             return true;
         }
-        idx += 1;
+        idx -= 1;
         return false;
 
     }
