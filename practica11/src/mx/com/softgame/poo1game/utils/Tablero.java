@@ -8,26 +8,27 @@ public class Tablero{
     private Tablero(){
     }
     public static boolean addPersonaje(Personaje p){
-        if(idx < 0){
-            idx += 1 ;
+        if(idx <= 0 && idx <10){
+            idx += 1;
             return false;
         }
+        System.out.println("lalal");
         personajes[idx] = p;
-        idx-=1;
         return true;
     }
     public static boolean delPersonaje(){
         if(!(personajes[idx] == null)){
             personajes[idx] = null;
+            idx += 1;
             return true;
         }
-        idx -= 1;
         return false;
 
     }
 
     public static void showAll(){
-        for(int i = idx; i <= personajes.length; i++){
+        for(int i = 0; i < personajes.length; i++){
+            System.out.println(i);
             if (personajes[i] == null){
                 System.out.println("-");
                 continue;

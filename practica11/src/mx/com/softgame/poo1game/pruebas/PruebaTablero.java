@@ -16,11 +16,12 @@ public class PruebaTablero {
                 System.out.println("No pudo ser insertado");
 
             }
+            System.out.println("xd");
         }
         Tablero.delPersonaje();
         Tablero.showAll();
 
-        for(int i = 0; i<15; i++){
+        for(int i = 0; i<14; i++){
             if(!Tablero.delPersonaje()){
                 System.out.println("No pudo ser eliminado");
             }
