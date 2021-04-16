@@ -7,31 +7,25 @@ public class Tablero{
     
     private Tablero(){
     }
-    public static boolean addPersonaje(Personaje p){
+    public static void addPersonaje(Personaje p)
+    throws TheException{
         if((idx + 1 < MAX_LINE)){
             idx +=1;
             personajes[idx] = p;
-
-            return true;
-            
-
             
         }
-        return false;
+        throw new TheException("No es posible agregar el personaje", idx);
         
         
     }
-    public static boolean delPersonaje(){
+    public static void delPersonaje()
+    throws TheException{
         if((idx - 1 >= 0)){
             personajes[idx] = null;
             idx -=1;
 
-            return true;
-            
-
-            
         }
-        return false;
+        throw new TheException("No es posible borrar el personaje", idx);
 
     }
         
