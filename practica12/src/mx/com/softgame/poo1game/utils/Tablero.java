@@ -13,19 +13,25 @@ public class Tablero{
             idx +=1;
             personajes[idx] = p;
             
+        }else{
+            throw new TheException("No es posible insertar el personaje", idx);
+
         }
-        throw new TheException("No es posible insertar el personaje", idx);
+        
         
         
     }
     public static void delPersonaje()
     throws TheException{
-        if((idx - 1 >= 0)){
+        if((idx >=0)){
             personajes[idx] = null;
             idx -=1;
 
+        }else{
+            throw new TheException("No es posible borrar el personaje", idx);
+
         }
-        throw new TheException("No es posible borrar el personaje", idx);
+        
 
     }
         
