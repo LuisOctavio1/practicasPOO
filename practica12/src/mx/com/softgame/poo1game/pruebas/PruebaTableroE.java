@@ -6,27 +6,53 @@ import mx.com.softgame.poo1game.utils.Tablero;
 import mx.com.softgame.poo1game.utils.TheException;
 
 public class PruebaTableroE {
-    public static void main(String[] args) throws TheException {
-        Personaje [] arr = {new Planta("Wendy",50),new Zombie("Jose", false), new Zombie("Karen", true),
-        new Planta("Giovana", 99), new Planta("Victor", 30), new Zombie("Vania"), new Planta("Ricardo"),
-        new Zombie("Brian",9,false), new Planta("Lesly", 9), new Planta("Carlos",10), new Zombie("Cristian", 20, false),
-        new Planta("Oscar", 40)            
+    public static void main(String[] args)throws TheException{
+        Personaje [] arr = {new Planta("Giovanna",50),
+        new Zombie("Miguel", false), 
+        new Zombie("Karen", true),
+        new Planta("Leonardo", 99), 
+        new Planta("Sebastian", 30), 
+        new Zombie("Hanna"), 
+        new Planta("Oscar"),
+        new Zombie("Brian",false), 
+        new Planta("Lesly", 9), 
+        new Planta("Vania",10), 
+        new Zombie("Erick", 20, false),
+        new Planta("Aline", 40)            
         };
-        //COMENTARIO : El error indica que la exception no es reportada y que deberia ser atrapada, asi que se arreglara con try catch
-        for(Personaje t: arr){
-            Tablero.addPersonaje(t);
+        //COMENTARIO : El error indica que la exception no es reportada y que deberia ser atrapada, asi que se arreglara reportandola al principio del main
+        try{
+            for(Personaje t: arr){
+                try {
+                    Tablero.addPersonaje(t);
+                } catch (TheException e) {
+                    e.printStackTrace();
+                }
+                
+                
+            }
             
-            
+            try {
+                Tablero.delPersonaje();
+            } catch (TheException e) {
+                e.printStackTrace();
+            }
+            Tablero.showAll();
+    
+            for(int i = 0; i<14; i++){
+                try {
+                    Tablero.delPersonaje();
+                } catch (TheException e) {
+                    e.printStackTrace();
+                }
+                    
+                
+            }
+
+        }catch(TheException a){
+            System.err.println(a + "" + a.getPoss());
         }
         
-        Tablero.delPersonaje();
-        Tablero.showAll();
-
-        for(int i = 0; i<14; i++){
-            Tablero.delPersonaje();
-                
-            
-        }
         
     }
     
