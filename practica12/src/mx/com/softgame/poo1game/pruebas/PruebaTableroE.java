@@ -23,34 +23,20 @@ public class PruebaTableroE {
         //COMENTARIO : El error indica que la exception no es reportada y que deberia ser atrapada, asi que se arreglara reportandola al principio del main
         try{
             for(Personaje t: arr){
-                try {
-                    Tablero.addPersonaje(t);
-                } catch (TheException e) {
-                    e.printStackTrace();
-                }
-                
-                
+                Tablero.addPersonaje(t);
             }
             
-            try {
-                Tablero.delPersonaje();
-            } catch (TheException e) {
-                e.printStackTrace();
-            }
+            Tablero.delPersonaje();
+            
             Tablero.showAll();
     
             for(int i = 0; i<14; i++){
-                try {
-                    Tablero.delPersonaje();
-                } catch (TheException e) {
-                    e.printStackTrace();
-                }
-                    
+                Tablero.delPersonaje();
                 
             }
 
-        }catch(TheException a){
-            System.err.println(a + "" + a.getPoss());
+        }catch(TheException e){
+            System.err.println(e + " " + e.getPoss());
         }
         
         

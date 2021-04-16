@@ -14,7 +14,7 @@ public class Tablero{
             personajes[idx] = p;
             
         }
-        throw new TheException("No es posible agregar el personaje", idx);
+        throw new TheException("No es posible insertar el personaje", idx);
         
         
     }
