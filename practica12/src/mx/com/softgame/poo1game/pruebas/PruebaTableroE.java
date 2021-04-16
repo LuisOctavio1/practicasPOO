@@ -3,6 +3,7 @@ import mx.com.softgame.poo1game.personajes.Personaje;
 import mx.com.softgame.poo1game.personajes.buenos.Planta;
 import mx.com.softgame.poo1game.personajes.malos.Zombie;
 import mx.com.softgame.poo1game.utils.Tablero;
+import mx.com.softgame.poo1game.utils.TheException;
 
 public class PruebaTableroE {
     public static void main(String[] args) {
@@ -13,15 +14,28 @@ public class PruebaTableroE {
         };
 
         for(Personaje t: arr){
-            Tablero.addPersonaje(t);
+            try {
+                Tablero.addPersonaje(t);
+            } catch (TheException a) {
+                a.printStackTrace();
+            }
             
         }
         
-        Tablero.delPersonaje();
+        try {
+            Tablero.delPersonaje();
+        } catch (TheException e) {
+
+            e.printStackTrace();
+        }
         Tablero.showAll();
 
         for(int i = 0; i<14; i++){
-            Tablero.delPersonaje();
+            try {
+                Tablero.delPersonaje();
+            } catch (TheException e) {
+                e.printStackTrace();
+            }
                 
             
         }
