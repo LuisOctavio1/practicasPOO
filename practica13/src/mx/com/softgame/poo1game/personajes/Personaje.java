@@ -1,6 +1,6 @@
 package mx.com.softgame.poo1game.personajes;
 import mx.com.softgame.poo1game.utils.Utileria;
-public abstract class  Personaje{
+public abstract class  Personaje implements Comparable{
     protected final int id = Utileria.getID();
     protected String nombre;
     protected int vida;
@@ -53,18 +53,24 @@ public abstract class  Personaje{
         }
     }
     public abstract boolean equals(Object b);
+
+    public int compareTo(Persona p){
+        int valot = nombre.compareTo(p.nombre);
+        if( valor != 0){
+            return valor;
+        }
+        return vida - p.vida; 
+    }
+
+    public int hashCode(){
+        return nombre.hashCode()+vida*7;
+    }
+
+    public int getld(){
+        return id;
+    }
         
     
-    /*
-    contenido del metodo
-        if ((b != null) && (b instanceof Personaje)){
-            Personaje d = (Personaje) b;
-            if ((nombre == d.nombre) && (vida == d.vida)){
-                return true;
-            }
-        }
-        return false;
-        */
     
 }
 
