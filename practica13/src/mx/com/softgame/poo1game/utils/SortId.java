@@ -8,9 +8,9 @@ public class SortId implements Comparator <Personaje>{
             return 0;
         }
         if (valor < 0){
-            return 1; 
+            return -1; 
         }else{
-            return -1;
+            return 1;
         }
 
     }

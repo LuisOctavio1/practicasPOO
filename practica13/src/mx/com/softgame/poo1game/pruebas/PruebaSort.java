@@ -10,7 +10,7 @@ public class PruebaSort {
     public static void main(String[] args) {
         TreeSet <Personaje>ts = new TreeSet<Personaje>();
         ts.add(new Planta("Cristian",70));
-        ts.add(new Planta("Karen",59));
+        ts.add(new Planta("Karen",50));
         ts.add(new Zombie("Hanna",80,false));
         ts.add(new Zombie("Erick",false));
         ts.add(new Zombie("Esmeralda",80,false));
@@ -25,16 +25,16 @@ public class PruebaSort {
         }
         System.out.println("********");
         LinkedList <Personaje> is = new LinkedList<Personaje>();
-        ts.add(new Planta("Cristian",70));
-        ts.add(new Planta("Karen",59));
-        ts.add(new Zombie("Hanna",80,false));
-        ts.add(new Zombie("Erick",false));
-        ts.add(new Zombie("Esmeralda",80,false));
-        ts.add(new Planta("Miguel",99));
-        ts.add(new Planta("Jaime",50));
-        ts.add(new Zombie("Cristian",80,false));
-        ts.add(new Zombie("Miguel",80,false));
-        ts.add(new Planta("Karen",50));
+        is.add(new Planta("Cristian",70));
+        is.add(new Planta("Karen",50));
+        is.add(new Zombie("Hanna",80,false));
+        is.add(new Zombie("Erick",false));
+        is.add(new Zombie("Esmeralda",80,false));
+        is.add(new Planta("Miguel",99));
+        is.add(new Planta("Jaime",50));
+        is.add(new Zombie("Cristian",80,false));
+        is.add(new Zombie("Miguel",80,false));
+        is.add(new Planta("Karen",50));
         Collections.sort(is,new SortId());
 
         for(Personaje t: is){

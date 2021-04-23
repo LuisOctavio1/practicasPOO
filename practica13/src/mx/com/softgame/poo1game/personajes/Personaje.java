@@ -1,6 +1,6 @@
 package mx.com.softgame.poo1game.personajes;
 import mx.com.softgame.poo1game.utils.Utileria;
-public abstract class  Personaje implements Comparable{
+public abstract class  Personaje implements Comparable<Personaje>{
     protected final int id = Utileria.getID();
     protected String nombre;
     protected int vida;
@@ -59,7 +59,7 @@ public abstract class  Personaje implements Comparable{
         if( valor != 0){
             return valor;
         }
-        return vida - p.vida; 
+        return  p.vida - vida; 
     }
 
     public int hashCode(){

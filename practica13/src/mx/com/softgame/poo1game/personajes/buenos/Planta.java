@@ -64,6 +64,8 @@ public class Planta extends Personaje{
         }
         return false;
     }
+
+    
    
    
 
