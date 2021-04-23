@@ -54,8 +54,8 @@ public abstract class  Personaje implements Comparable{
     }
     public abstract boolean equals(Object b);
 
-    public int compareTo(Persona p){
-        int valot = nombre.compareTo(p.nombre);
+    public int compareTo(Personaje p){
+        int valor = nombre.compareTo(p.nombre);
         if( valor != 0){
             return valor;
         }
@@ -66,7 +66,7 @@ public abstract class  Personaje implements Comparable{
         return nombre.hashCode()+vida*7;
     }
 
-    public int getld(){
+    public int getId(){
         return id;
     }
         
