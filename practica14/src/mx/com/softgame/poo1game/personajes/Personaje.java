@@ -1,6 +1,7 @@
 package mx.com.softgame.poo1game.personajes;
 import mx.com.softgame.poo1game.utils.Utileria;
-public abstract class  Personaje implements Comparable<Personaje>{
+import java.io.Serializable;
+public abstract class  Personaje implements Comparable<Personaje>, Serializable{
     protected final int id = Utileria.getID();
     protected String nombre;
     protected int vida;
