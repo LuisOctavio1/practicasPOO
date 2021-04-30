@@ -51,8 +51,8 @@ public class PruebaIO {
                 e.printStackTrace();
             }
             try {
-        
-                FileOutputStream f = new FileOutputStream ("pvsz.out");
+                String ruta = System.getProperty("user.home")+"\\";
+                FileOutputStream f = new FileOutputStream ( ruta + "pvsz.out");
                 ObjectOutputStream s = new ObjectOutputStream (f);
                 for(Personaje t: personajes){
                     s.writeObject (t);
