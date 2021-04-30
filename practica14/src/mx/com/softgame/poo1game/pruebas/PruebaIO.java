@@ -1,6 +1,10 @@
 package mx.com.softgame.poo1game.pruebas;
 import java.io.File;
 import java.util.Scanner;
+import java.util.ArrayList;
+import mx.com.softgame.poo1game.personajes.Personaje;
+import mx.com.softgame.poo1game.personajes.buenos.Planta;
+import mx.com.softgame.poo1game.personajes.malos.Zombie;
 public class PruebaIO {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -9,7 +13,8 @@ public class PruebaIO {
         System.out.println(path);
         File miArchivo = new File(file);
         if (miArchivo.exists()){
-            System.out.println("Si existe");
+            ArrayList<Personaje> personajes = new ArrayList<Personaje>();
+            
         }else{
             System.out.println("No existe, terminando programa");
         }
