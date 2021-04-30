@@ -1,7 +1,10 @@
 package mx.com.softgame.poo1game.pruebas;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.IOException;
 import mx.com.softgame.poo1game.personajes.Personaje;
 import mx.com.softgame.poo1game.personajes.buenos.Planta;
 import mx.com.softgame.poo1game.personajes.malos.Zombie;
@@ -11,9 +14,27 @@ public class PruebaIO {
         String file = sc.nextLine();
         String path = System.getProperty("user.home") + "\\" + file.trim();
         System.out.println(path);
-        File miArchivo = new File(file);
+        File miArchivo = new File(path);
         if (miArchivo.exists()){
             ArrayList<Personaje> personajes = new ArrayList<Personaje>();
+            try{
+                FileReader input = new FileReader(miArchivo);
+                BufferedReader bufInput = new BufferedReader(input);
+                String line = null;
+                int cuantos = 0;
+                while ((line = bufInput.readLine()) !=null && cuantos <= 0){
+                    System.out.println(line);
+                    int count = Integer.parseInt(line);
+                    while((line = bufInput.readLine()) !=null && cuantos < count){
+                        cuantos++;
+                        System.out.println(line);
+                    }
+                }
+                bufInput.close();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
             
         }else{
             System.out.println("No existe, terminando programa");
