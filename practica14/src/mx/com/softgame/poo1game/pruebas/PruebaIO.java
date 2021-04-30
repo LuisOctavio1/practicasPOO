@@ -22,14 +22,28 @@ public class PruebaIO {
                 BufferedReader bufInput = new BufferedReader(input);
                 String line = null;
                 int cuantos = 0;
-                while ((line = bufInput.readLine()) !=null && cuantos <= 0){
-                    System.out.println(line);
-                    int count = Integer.parseInt(line);
+                line = bufInput.readLine();
+                System.out.println(line);
+                int count = Integer.parseInt(line);
                     while((line = bufInput.readLine()) !=null && cuantos < count){
                         cuantos++;
                         System.out.println(line);
+                        String [] partes = line.split(",");
+                        int cuenta = 0;
+                        if(partes[cuenta] == "P"){
+                            personajes.add(new Planta(partes[cuenta+1]));
+                            cuenta += 2;
+
+                        }else{
+                            personajes.add(new Zombie(partes[cuenta+1]));
+                            cuenta += 2;
+                        }
+                        
                     }
-                }
+                    for(Personaje t: personajes){
+                        System.out.println(t);
+                    }
+                
                 bufInput.close();
             }catch (IOException e){
                 e.printStackTrace();
