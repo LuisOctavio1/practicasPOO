@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import mx.com.softgame.poo1game.personajes.Personaje;
 import mx.com.softgame.poo1game.personajes.buenos.Planta;
 import mx.com.softgame.poo1game.personajes.malos.Zombie;
@@ -47,6 +49,18 @@ public class PruebaIO {
                 bufInput.close();
             }catch (IOException e){
                 e.printStackTrace();
+            }
+            try {
+        
+                FileOutputStream f = new FileOutputStream ("pvsz.out");
+                ObjectOutputStream s = new ObjectOutputStream (f);
+                for(Personaje t: personajes){
+                    s.writeObject (t);
+                }
+                
+                s.close ();
+         } catch (IOException e) {
+            e.printStackTrace ();
             }
 
             
