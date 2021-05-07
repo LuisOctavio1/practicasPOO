@@ -5,7 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
-import javax.swing.FlowLayout;
+import java.awt.event.WindowListener;
+import java.awt.FlowLayout;
 
 public class VentanaPrincipal{
     JFrame f;
@@ -37,13 +38,13 @@ public class VentanaPrincipal{
         f.add(lblN);
         f.add(btnExit);
         f.setSize(550,440);
-        f.action(windowClosing(), System.exit( 0 ));
+
         f.setVisible(true);
     }
 
     public static void main(String[] args) {
-        VentanaPrincipal =v = new VentanaPrincipal();
-        v.launchFrame();
+        VentanaPrincipal v = new VentanaPrincipal();
+        v.initComponents();
     }
 
 
