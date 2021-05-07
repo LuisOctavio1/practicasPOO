@@ -11,8 +11,9 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import java.io.File;
 import javax.swing.JOptionPane;
-import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.IOException;
 
 public class VentanaPrincipal{
     JFrame f;
@@ -73,7 +74,7 @@ public class VentanaPrincipal{
             if(archivo.isFile()){
                 getContenido(archivo);
             }else{
-                getLsit(archivo);
+                getList(archivo);
             }
 
         }else{
@@ -84,16 +85,14 @@ public class VentanaPrincipal{
     public void getContenido(File archivo){
         try {
            
-            BufferedReader bufInput = new BufferedReader(archivo);
-            BufferedWriter bufOutput= new BufferedWriter(bufInput);
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
             String line;
-	        line = bufOutput.readLine();
+	        line = br.readLine();
 	        while ( line != null ) {
-    	        bufOutput.write(line, 0, line.length());
-	            bufOutput.newLine();
-	            line = bufOutput.readLine();
+    	        txtCont.append(line);
 	         }
-             bufInput.close();
+             br.close();
 	        }catch (IOException e) {
                 e.printStackTrace();
             }
