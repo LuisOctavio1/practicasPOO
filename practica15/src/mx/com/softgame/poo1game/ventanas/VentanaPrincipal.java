@@ -6,6 +6,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.WindowListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import java.awt.FlowLayout;
 
 public class VentanaPrincipal{
@@ -38,7 +41,11 @@ public class VentanaPrincipal{
         f.add(lblN);
         f.add(btnExit);
         f.setSize(550,440);
-
+        f.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+              System.exit(0);
+            }
+          });
         f.setVisible(true);
     }
 
