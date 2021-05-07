@@ -88,19 +88,34 @@ public class VentanaPrincipal{
             FileReader fr = new FileReader(archivo);
             BufferedReader br = new BufferedReader(fr);
             String line;
+            String texto;
+            int count;
 	        line = br.readLine();
 	        while ( line != null ) {
-    	        txtCont.append(line);
+                texto += line + "/n";
 	         }
+             txtCont.append(line);
+             count = texto.chars();
+             lblN.setText(count);
              br.close();
-	        }catch (IOException e) {
-                e.printStackTrace();
-            }
-                
-	        
-                
+	    }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getList(File archivo){
+        String texto;
+        String [] carpetas = archivo.List();
+        for(String carpeta: carpetas){
+            texto += carpeta + "\n";
+        }
+            txtCont.append(line);
+            count = texto.chars();
+            lblN.setText(count);
 
     }
+
+
 
     public static void main(String[] args) {
         VentanaPrincipal v = new VentanaPrincipal();
