@@ -43,7 +43,7 @@ public class VentanaPrincipal{
         btnOpen.addActionListener(new  ActionListener(){
             public void actionPerformed(ActionEvent e){
                 
-
+                openFile();
             }
 
         }
@@ -88,15 +88,15 @@ public class VentanaPrincipal{
             FileReader fr = new FileReader(archivo);
             BufferedReader br = new BufferedReader(fr);
             String line;
-            String texto;
+            String texto = "";
             int count;
 	        line = br.readLine();
 	        while ( line != null ) {
                 texto += line + "/n";
 	         }
              txtCont.append(line);
-             count = texto.chars();
-             lblN.setText(count);
+             count = texto.length();
+             lblN.setText(count +"");
              br.close();
 	    }catch (IOException e) {
             e.printStackTrace();
@@ -104,14 +104,15 @@ public class VentanaPrincipal{
     }
 
     public void getList(File archivo){
-        String texto;
-        String [] carpetas = archivo.List();
+        String texto = "";
+        int count;
+         String[] carpetas = archivo.list();
         for(String carpeta: carpetas){
             texto += carpeta + "\n";
         }
-            txtCont.append(line);
-            count = texto.chars();
-            lblN.setText(count);
+            txtCont.append(texto);
+            count = texto.length();
+            lblN.setText(count +"");
 
     }
 
