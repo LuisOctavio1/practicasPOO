@@ -9,6 +9,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
+import java.io.File;
+import javax.swing.JOptionPane;
 
 
 public class VentanaPrincipal{
@@ -23,11 +25,11 @@ public class VentanaPrincipal{
     public VentanaPrincipal(){
         f = new JFrame("Practica14");
         lblFile = new JLabel("Nombre del archivo");
-        txtFile = new JTextField();
+        txtFile = new JTextField(20);
         btnOpen = new JButton("Abrir archivo");
         txtCont = new JTextArea(30,40);
         lblLeidos = new JLabel("Caracteres leidos");
-        lblN = new JLabel();
+        lblN = new JLabel("0");
         btnExit = new JButton("salir");
     }
 
@@ -38,7 +40,7 @@ public class VentanaPrincipal{
         f.add(btnOpen);
         btnOpen.addActionListener(new  ActionListener(){
             public void actionPerformed(ActionEvent e){
-                e.openFile();
+                
 
             }
 
@@ -58,6 +60,19 @@ public class VentanaPrincipal{
         f.setSize(550,600);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
+    }
+
+    public void openFile(){
+        String file = txtFile.getText();
+        String path = System.getProperty("user.home") + "\\" + file;
+        System.out.println(path);
+        txtFile.setText("");
+        File archivo = new File(path);
+        if (archivo.exists()){
+
+        }else{
+            f.showMessageDialog("El archivo o direccion no existe");
+        }
     }
 
     public static void main(String[] args) {
