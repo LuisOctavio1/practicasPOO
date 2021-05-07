@@ -11,7 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import java.io.File;
 import javax.swing.JOptionPane;
-
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
 
 public class VentanaPrincipal{
     JFrame f;
@@ -69,10 +70,37 @@ public class VentanaPrincipal{
         txtFile.setText("");
         File archivo = new File(path);
         if (archivo.exists()){
+            if(archivo.isFile()){
+                getContenido(archivo);
+            }else{
+                getLsit(archivo);
+            }
 
         }else{
-            f.showMessageDialog("El archivo o direccion no existe");
+            JOptionPane.showMessageDialog(null,"El archivo o direccion no existe");
         }
+    }
+
+    public void getContenido(File archivo){
+        try {
+           
+            BufferedReader bufInput = new BufferedReader(archivo);
+            BufferedWriter bufOutput= new BufferedWriter(bufInput);
+            String line;
+	        line = bufOutput.readLine();
+	        while ( line != null ) {
+    	        bufOutput.write(line, 0, line.length());
+	            bufOutput.newLine();
+	            line = bufOutput.readLine();
+	         }
+             bufInput.close();
+	        }catch (IOException e) {
+                e.printStackTrace();
+            }
+                
+	        
+                
+
     }
 
     public static void main(String[] args) {
