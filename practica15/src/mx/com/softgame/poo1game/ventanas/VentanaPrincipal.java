@@ -92,9 +92,11 @@ public class VentanaPrincipal{
             int count;
 	        line = br.readLine();
 	        while ( line != null ) {
-                texto += line + "/n";
+                texto += line + "\n" + "" ;
+                line = br.readLine();
+                
 	         }
-             txtCont.append(line);
+             txtCont.append(texto);
              count = texto.length();
              lblN.setText(count +"");
              br.close();
