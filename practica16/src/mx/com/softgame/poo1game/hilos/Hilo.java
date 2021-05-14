@@ -1,5 +1,4 @@
 package mx.com.softgame.poo1game.hilos;
-import java.util.Random;
 import javax.swing.JLabel;
 
 public class Hilo extends Thread{
@@ -13,16 +12,22 @@ public class Hilo extends Thread{
     }
 
     public void run(){
-        String str;
+        String str="";
         for(int i = 0; i<30;i++){
-            str = etiqueta;
-            char c = charAt(str.length()-1);
+            str = etiqueta.getText();
+            char c = str.charAt(str.length()-1);
             str += c;
-            etiqueta = str;
-            int n = Math.random()*1001;
-            hilo.sleep(n); 
+            etiqueta.setText(str);
+            int n = (int) (Math.random()*1001);
+            try{
+                Thread.sleep(n);
+            }catch(InterruptedException e){
+                System.err.println(e);
+
+            }
+             
         }
         str += "HECHO";
-        etiqueta = str;
+        etiqueta.setText(str);
     }
 }
