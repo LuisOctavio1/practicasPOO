@@ -4,6 +4,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+
 
 public class VentanaHilo extends JFrame{
     JMenuBar menuBar;
@@ -20,7 +25,7 @@ public class VentanaHilo extends JFrame{
     }
 
     public void initComponents(){
-        f.setLayout (new GridLayout(4));
+        this.setLayout (new GridLayout(4,0));
         iblA = new jLabel("A");
         iblB = new jLabel("B");
         iblC = new jLabel("C");
@@ -42,10 +47,11 @@ public class VentanaHilo extends JFrame{
             }
 
         });
-        ventanaHilo.setSize(1024,400);
+        this.setSize(1024,400);
     }
 
     public void iniciarHilos(){
+        HelloRunner r = new HelloRunner();
         Thread hilo1 = new Thread(r);
         Thread hilo2 = new Thread(r);
         Thread hilo3 = new Thread(r);
