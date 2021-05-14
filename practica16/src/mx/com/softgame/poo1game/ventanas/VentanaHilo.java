@@ -16,10 +16,11 @@ public class VentanaHilo extends JFrame{
     JMenuItem mnuSalir;
 
     public VentanaHilo(){
-        
+        initComponents();
     }
 
     public void initComponents(){
+        f.setLayout (new GridLayout(4));
         iblA = new jLabel("A");
         iblB = new jLabel("B");
         iblC = new jLabel("C");
@@ -41,9 +42,21 @@ public class VentanaHilo extends JFrame{
             }
 
         });
-        
-
+        ventanaHilo.setSize(1024,400);
     }
+
+    public void iniciarHilos(){
+        Thread hilo1 = new Thread(r);
+        Thread hilo2 = new Thread(r);
+        Thread hilo3 = new Thread(r);
+        Thread hilo4 = new Thread(r);
+        hilo1.start();
+        hilo2.start();
+        hilo3.start();
+        hilo4.start();
+    }
+
+
     
 
 
