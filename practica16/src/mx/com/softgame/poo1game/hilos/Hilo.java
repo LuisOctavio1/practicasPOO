@@ -6,13 +6,13 @@ public class Hilo extends Thread{
     String name;
 
     public Hilo(String name,JLabel etiqueta){
-        name = this.name;
-        etiqueta = this.etiqueta;
+        this.name = name;
+        this.etiqueta = etiqueta;
 
     }
 
     public void run(){
-        String str="";
+        String str = "";
         for(int i = 0; i<30;i++){
             str = etiqueta.getText();
             char c = str.charAt(str.length()-1);

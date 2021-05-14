@@ -11,21 +11,29 @@ import java.awt.event.ActionEvent;
 
 
 public class VentanaHilo extends JFrame{
-    JMenuBar menuBar = new JMenuBar();
-    JLabel iblA = new JLabel("A");
-    JLabel iblB = new JLabel("B");
-    JLabel iblC = new JLabel("C");
-    JLabel iblD = new JLabel("D");
-    JMenu mnuArchivo = new JMenu("Archivo");
-    JMenuItem mnuInicio = new JMenuItem("Inicio");
-    JMenuItem mnuSalir = new JMenuItem("Salir");
+    JMenuBar menuBar;
+    JLabel iblA;
+    JLabel iblB ;
+    JLabel iblC;
+    JLabel iblD;
+    JMenu mnuArchivo;
+    JMenuItem mnuInicio;
+    JMenuItem mnuSalir;
 
     public VentanaHilo(){
         initComponents();
     }
 
     public void initComponents(){
-        setLayout (new GridLayout(4,0));
+        setLayout (new GridLayout(4,1));
+        menuBar = new JMenuBar();
+        iblA = new JLabel("A");
+        iblB = new JLabel("B");
+        iblC = new JLabel("C");
+        iblD = new JLabel("D");
+        mnuArchivo = new JMenu("Archivo");
+        mnuInicio = new JMenuItem("Inicio");
+        mnuSalir = new JMenuItem("Salir");
         add(iblA);
         add(iblB);
         add(iblC);
@@ -33,6 +41,7 @@ public class VentanaHilo extends JFrame{
         menuBar.add(mnuArchivo);
         mnuArchivo.add(mnuInicio);
         mnuArchivo.add(mnuSalir);
+        setJMenuBar(menuBar);
         mnuInicio.addActionListener(new  ActionListener(){
             public void actionPerformed(ActionEvent e){
                 
@@ -47,7 +56,7 @@ public class VentanaHilo extends JFrame{
             }
 
         });
-        this.setSize(400,600);
+        setSize(400,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -57,6 +66,7 @@ public class VentanaHilo extends JFrame{
         Hilo hilo2 = new Hilo("hilo2",iblB);
         Hilo hilo3 = new Hilo("hilo3",iblC);
         Hilo hilo4 = new Hilo("hilo4",iblD);
+        System.out.println(iblA.getText());
         hilo1.start();
         hilo2.start();
         hilo3.start();
